@@ -175,3 +175,19 @@ $large_screen_size: 1200px;
   }
 }
 ```
+
+## Extend a class
+
+Here we extend paragraph 2's properties from paragraph 1.
+
+![Extend a scss class](./previews/scss_extend_class.jpg)
+
+## Width calculation example
+
+We `do not` need to write the `calc` keyword to run any calculation operation.
+
+![Width calculation example](./previews/scss_width_calculation.jpg)
+
+### Acknowledgement
+
+- [bluewindlab.net](https://bluewindlab.net)
