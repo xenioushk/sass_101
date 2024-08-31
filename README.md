@@ -1,19 +1,20 @@
 # Useful SASS commands.
 
-# Define a variable
+## Define a SASS variable
 
 ```scss
 $primaryColor: #edf0ec;
 ```
 
-## Use example
+### Use example
 
-````scss
-.headline{
-color: $primaryColor;
-}```
+```scss
+.headline {
+  color: $primaryColor;
+}
+```
 
-# map-get function
+## map-get function
 
 Define an array for the font weights. Add the Key value pairs like JavaScript and PHP.
 
@@ -24,9 +25,9 @@ $font-weight: (
   "bold": 700,
   "extra-bold": 900,
 );
-````
+```
 
-## Use example
+### Use example
 
 ```scss
 .heading {
