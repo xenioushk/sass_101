@@ -34,3 +34,39 @@ $font-weight: (
   font-weight: map-get($font-weight, regular);
 }
 ```
+
+## Nesting
+
+```scss
+.heading {
+  font-size: 1.5rem;
+
+  #{&}__italic {
+    font-style: italic;
+  }
+}
+```
+
+### Output
+
+```css
+.heading {
+  font-size: 1.5rem;
+}
+
+.heading .heading_italic {
+  font-style: italic;
+}
+```
+
+## Include a partial .scss file
+
+**@import** keyword is used to add the partial files to the main(styles.scss) scss file.
+
+**Examples of partial files names**
+
+- \_header.scss
+- \_footer.scss
+- \_variables.scss
+
+[![Include a partial .scss file](previews/import_scss_partial_file.jpg)]
