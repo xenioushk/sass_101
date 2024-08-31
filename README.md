@@ -1,4 +1,4 @@
-# Useful SASS commands.
+# Useful SASS commands
 
 ## Define a SASS variable
 
@@ -6,7 +6,7 @@
 $primaryColor: #edf0ec;
 ```
 
-### Use example
+### Example
 
 ```scss
 .headline {
@@ -27,7 +27,7 @@ $font-weight: (
 );
 ```
 
-### Use example
+### Example
 
 ```scss
 .heading {
@@ -69,4 +69,109 @@ $font-weight: (
 - \_footer.scss
 - \_variables.scss
 
-[![Include a partial .scss file](previews/import_scss_partial_file.jpg)]
+![Include a partial .scss file](previews/import_scss_partial_file.jpg)
+
+## Declare custom function
+
+```scss
+@function FUNCTION_NAME($PARAM) {
+  @return <SOME VALUE>;
+}
+```
+
+### Example
+
+```scss
+@function font_weight_light(){
+  return 400
+}
+
+.some_class{
+  font-weight: font_weight_light()
+}
+```
+
+## Declare a mixin
+
+```scss
+@mixin drop-shadow($x: 0, $y: 0, $blur: 5px, $spread: 0, $alpha: 0.16) {
+  -webkit-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+  box-shadow: $x $y $blur $spread rgba(54, 114, 216, $alpha);
+}
+```
+
+### Example
+
+```scss
+.my_box {
+  background: $primaryColor;
+  @include drop-shadow();
+}
+```
+
+## IF/ELSE STATEMENT
+
+```scss
+@function theme($light-theme: false) {
+  @if $light-theme {
+    background: #ffffff;
+  } @else {
+    //dark theme
+    background: #333333;
+  }
+}
+```
+
+## For loop
+
+```scss
+@for $i from 1 through 4 {
+  .some_class_#{$i} {
+    transition-delay: ($i * 0.1s) + 0.15s;
+  }
+}
+```
+
+## Media queries
+
+```scss
+// Screensized variables
+$tablet_screen_size: 576px;
+$tablet_horizontal_screen_size: 767px;
+$desktop_screen_size: 992px;
+$large_screen_size: 1200px;
+
+@mixin tablet {
+  @media (min-width: $tablet_screen_size) {
+    @content;
+  }
+}
+
+@mixin tabletHorizontal {
+  @media (min-width: $tablet_horizontal_screen_size) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop_screen_size) {
+    @content;
+  }
+}
+
+@mixin largeScreen {
+  @media (min-width: $large_screen_size) {
+    @content;
+  }
+}
+```
+
+### Example
+
+```scss
+.columns {
+  @include tablet {
+    flex-direction: column;
+  }
+}
+```
