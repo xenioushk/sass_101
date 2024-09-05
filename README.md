@@ -188,6 +188,12 @@ We `do not` need to write the `calc` keyword to run any calculation operation.
 
 ![Width calculation example](./previews/scss_width_calculation.jpg)
 
+## Width calculation with different units example
+
+```scss
+width: calc((100% / 5%) - 20px);
+```
+
 ### Acknowledgement
 
 - [bluewindlab.net](https://bluewindlab.net)
