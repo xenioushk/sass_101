@@ -122,6 +122,24 @@ $font-weight: (
 }
 ```
 
+## Ternary Logic
+
+```scss
+@mixin round($radius: 5px, $override: false) {
+  webkit-border-radius: $radius if($override, !important, null);
+  border-radius: $radius if($override, !important, null);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+```
+
+**Example**
+
+```scss
+@include round(10px, true); // Adds !important to the border-radius
+@include round(); // Uses default values
+```
+
 ## For loop
 
 ```scss
