@@ -3,14 +3,14 @@
 ## Define a SASS variable
 
 ```scss
-$primaryColor: #edf0ec;
+$primary-color: #edf0ec;
 ```
 
 ### Example
 
 ```scss
 .headline {
-  color: $primaryColor;
+  color: $primary-color;
 }
 ```
 
@@ -106,6 +106,23 @@ $font-weight: (
 .my_box {
   background: $primaryColor;
   @include drop-shadow();
+}
+```
+
+## More mixin examples
+
+```scss
+// Rounded corner
+@mixin round($radius: 5px, $override: false) {
+  border-radius: $radius if($override, !important, null);
+  background-clip: padding-box;
+}
+```
+
+```scss
+// Transition
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease-in-out;
 }
 ```
 
@@ -210,6 +227,19 @@ We `do not` need to write the `calc` keyword to run any calculation operation.
 
 ```scss
 width: calc((100% / 5%) - 20px);
+```
+
+## Placeholder text color
+
+The following code is compatible with all modern browsers and will change the input and textarea
+form field placeholder color to white, with an opacity of 0.5. The opacity is optional.
+
+```css
+input::placeholder,
+textarea::placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+}
 ```
 
 ### Acknowledgement
